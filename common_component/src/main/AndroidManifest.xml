@@ -17,15 +17,5 @@
         <receiver
             android:name=".receiver.NotificationReceiver"
             android:exported="false" />
-
-        <provider
-            android:name="com.taobao.update.provider.UpdateProvider"
-            android:authorities="${applicationId}.update.provider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/alicloud_update_paths" />
-        </provider>
     </application>
 </manifest>
