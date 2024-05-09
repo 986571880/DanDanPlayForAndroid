@@ -76,14 +76,15 @@ class MediaFragment : BaseFragment<MediaViewModel, FragmentMediaBinding>() {
                             }
 
                             itemLayout.setOnClickListener {
-                                DanDanPlay.permission.storage.request(this@MediaFragment) {
-                                    onGranted {
-                                        launchMediaStorage(data)
-                                    }
-                                    onDenied {
-                                        ToastCenter.showError("获取文件读取权限失败，无法打开媒体库")
-                                    }
-                                }
+                                launchMediaStorage(data)
+//                                DanDanPlay.permission.storage.request(this@MediaFragment) {
+//                                    onGranted {
+//                                        launchMediaStorage(data)
+//                                    }
+//                                    onDenied {
+//                                        ToastCenter.showError("获取文件读取权限失败，无法打开媒体库")
+//                                    }
+//                                }
                             }
                             itemLayout.setOnLongClickListener {
                                 if (data.mediaType.deletable) {
