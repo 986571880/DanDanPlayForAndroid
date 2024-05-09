@@ -29,7 +29,7 @@ kapt {
 }
 
 dependencies {
-    debugImplementation(Dependencies.Square.leakcanary)
+//    debugImplementation(Dependencies.Square.leakcanary)
 
     api(project(":data_component"))
     api(project(":repository:seven_zip"))
