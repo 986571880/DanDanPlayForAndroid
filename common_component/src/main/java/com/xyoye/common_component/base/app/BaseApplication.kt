@@ -7,7 +7,7 @@ import coil.ImageLoader
 import coil.ImageLoaderFactory
 import coil.decode.VideoFrameDecoder
 import com.alibaba.android.arouter.launcher.ARouter
-import com.tencent.bugly.crashreport.CrashReport
+//import com.tencent.bugly.crashreport.CrashReport
 import com.tencent.mmkv.MMKV
 import com.xyoye.common_component.BuildConfig
 import com.xyoye.common_component.notification.Notifications
@@ -47,11 +47,11 @@ open class BaseApplication : Application(), ImageLoaderFactory {
         }
         MMKV.initialize(this)
         ARouter.init(this)
-        CrashReport.initCrashReport(
-            this,
-            SecurityHelper.getInstance().buglyId,
-            BuildConfig.DEBUG
-        )
+//        CrashReport.initCrashReport(
+//            this,
+//            SecurityHelper.getInstance().buglyId,
+//            BuildConfig.DEBUG
+//        )
         Notifications.setupNotificationChannels(this)
         ActivityHelper.instance.init(this)
         EMASHelper.init(this)

@@ -27,4 +27,6 @@
     <string name="test_backup_domain">备用域名</string>
 
     <string name="tips_login_required">请登录后再执行此操作</string>
+
+    <string name="exit">退出</string>
 </resources>

@@ -63,7 +63,7 @@ dependencies {
     api(Dependencies.Apache.commons_net)
 
     api(Dependencies.Tencent.mmkv)
-    implementation(Dependencies.Tencent.bugly)
+//    implementation(Dependencies.Tencent.bugly)
 
     api(Dependencies.Square.retrofit)
     implementation(Dependencies.Square.retrofit_moshi)
@@ -74,9 +74,9 @@ dependencies {
     api(Dependencies.Github.smbj)
     api(Dependencies.Github.dcerpc)
 
-    api(Dependencies.Alibaba.alicloud_update)
-    api(Dependencies.Alibaba.alicloud_feedback)
-    implementation(Dependencies.Alibaba.alicloud_analysis)
+//    api(Dependencies.Alibaba.alicloud_update)
+//    api(Dependencies.Alibaba.alicloud_feedback)
+//    implementation(Dependencies.Alibaba.alicloud_analysis)
 
     kapt(files("libs/mmkv-compiler.jar"))
     kapt(Dependencies.AndroidX.room_compiler)
