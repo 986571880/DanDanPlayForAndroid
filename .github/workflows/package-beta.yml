@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - master
+  workflow_dispatch:
 
 jobs:
   package:
@@ -22,23 +23,23 @@ jobs:
           java-version: 11
           distribution: adopt
 
-      # 3.获取签名密钥
-      - name: decrypt key
-        run: |
-          gpg --quiet --batch --yes --decrypt \
-          --passphrase=${{ secrets.KEY_PASSPHRASE }} \
-          --output gradle/assemble/dandanplay.jks gradle/assemble/dandanplay.jks.gpg
+#      # 3.获取签名密钥
+#      - name: decrypt key
+#        run: |
+#          gpg --quiet --batch --yes --decrypt \
+#          --passphrase=${{ secrets.KEY_PASSPHRASE }} \
+#          --output gradle/assemble/dandanplay.jks gradle/assemble/dandanplay.jks.gpg
 
       # 4.配置构建类型
       - name: setup build type
-        run: echo "BUILD_TYPE=beta" >> $GITHUB_ENV
+        run: echo "BUILD_TYPE=debug" >> $GITHUB_ENV
 
       # 5.构建安装包
       - name: assemble apk
-        env:
-          KEYSTORE_PASS: ${{ secrets.KEYSTORE_PASS }}
-          ALIAS_NAME: ${{ secrets.ALIAS_NAME }}
-          ALIAS_PASS: ${{ secrets.ALIAS_PASS }}
+#        env:
+#          KEYSTORE_PASS: ${{ secrets.KEYSTORE_PASS }}
+#          ALIAS_NAME: ${{ secrets.ALIAS_NAME }}
+#          ALIAS_PASS: ${{ secrets.ALIAS_PASS }}
         run: chmod +x gradlew &&./gradlew clean assemble${{ env.BUILD_TYPE }} --stacktrace
 
       # 6.配置构建版本
